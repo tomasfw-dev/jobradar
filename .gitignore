@@ -39,3 +39,6 @@ ehthumbs.db
 .DS_Store
 .AppleDouble
 .LSOverride
+
+# Local project documentation
+docs-local/
