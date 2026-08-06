@@ -20,7 +20,7 @@ En desarrollo.
 ## Estructura general
 
 ```
-jobradar/
+rolegazer/
 ├── backend/     # API, scrapers y procesamiento en segundo plano
 └── frontend/    # Interfaz de usuario
 ```
