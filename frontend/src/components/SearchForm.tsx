@@ -36,7 +36,7 @@ function SearchForm() {
   }
 
   return (
-    <form className="jr-search-form card border-0 shadow-sm" onSubmit={handleSubmit}>
+    <form className="rg-search-form card border-0 shadow-sm" onSubmit={handleSubmit}>
       <div className="card-body p-4">
         <div className="row g-3">
           <div className="col-12 col-lg-6">
@@ -128,7 +128,7 @@ function SearchForm() {
           </div>
 
           <div className="col-12 col-lg-4 d-flex align-items-end">
-            <button type="submit" className="btn jr-btn-primary w-100">
+            <button type="submit" className="btn rg-btn-primary w-100">
               Buscar ofertas
             </button>
           </div>

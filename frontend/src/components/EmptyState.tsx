@@ -1,7 +1,7 @@
 function EmptyState() {
   return (
-    <section className="jr-empty" aria-labelledby="empty-title">
-      <div className="jr-empty__panel">
+    <section className="rg-empty" aria-labelledby="empty-title">
+      <div className="rg-empty__panel">
         <h2 id="empty-title" className="h4 mb-2">
           Todavía no realizaste ninguna búsqueda
         </h2>

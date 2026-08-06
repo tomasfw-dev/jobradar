@@ -1,19 +1,19 @@
 :root {
-  --jr-navy: #0b1f3a;
-  --jr-blue: #1a73e8;
-  --jr-turquoise: #14b8a6;
-  --jr-bg: #f4f7fb;
-  --jr-surface: #ffffff;
-  --jr-text: #1e293b;
-  --jr-text-muted: #64748b;
-  --jr-border: #d9e2ef;
-  --jr-font: 'Segoe UI', Candara, 'Trebuchet MS', sans-serif;
+  --rg-navy: #0b1f3a;
+  --rg-blue: #1a73e8;
+  --rg-turquoise: #14b8a6;
+  --rg-bg: #f4f7fb;
+  --rg-surface: #ffffff;
+  --rg-text: #1e293b;
+  --rg-text-muted: #64748b;
+  --rg-border: #d9e2ef;
+  --rg-font: 'Segoe UI', Candara, 'Trebuchet MS', sans-serif;
 
-  font-family: var(--jr-font);
+  font-family: var(--rg-font);
   line-height: 1.5;
   font-weight: 400;
-  color: var(--jr-text);
-  background-color: var(--jr-bg);
+  color: var(--rg-text);
+  background-color: var(--rg-bg);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -29,8 +29,8 @@
 body {
   margin: 0;
   min-width: 320px;
-  background-color: var(--jr-bg);
-  color: var(--jr-text);
+  background-color: var(--rg-bg);
+  color: var(--rg-text);
 }
 
 #root {
@@ -45,5 +45,5 @@ p {
 }
 
 a {
-  color: var(--jr-blue);
+  color: var(--rg-blue);
 }

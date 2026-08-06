@@ -9,10 +9,10 @@ class HealthResponse(BaseModel):
     service: str
 
 
-app = FastAPI(title="JobRadar API", version="0.1.0")
+app = FastAPI(title="RoleGazer API", version="0.1.0")
 app.include_router(searches_router)
 
 
 @app.get("/health", response_model=HealthResponse)
 def health() -> HealthResponse:
-    return HealthResponse(status="ok", service="jobradar-api")
+    return HealthResponse(status="ok", service="rolegazer-api")

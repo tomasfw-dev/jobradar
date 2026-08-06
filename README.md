@@ -1,6 +1,6 @@
-# JobRadar
+# RoleGazer
 
-JobRadar ayuda a centralizar ofertas laborales dispersas en distintos sitios web, evitando la búsqueda manual repetitiva.
+RoleGazer ayuda a centralizar ofertas laborales dispersas en distintos sitios web, evitando la búsqueda manual repetitiva.
 
 ## Objetivo
 
