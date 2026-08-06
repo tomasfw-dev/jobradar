@@ -25,6 +25,17 @@ def test_search_run_foreign_key_references_search():
     assert foreign_key.ondelete == "CASCADE"
 
 
+def test_search_check_constraints_exist():
+    check_names = {
+        constraint.name
+        for constraint in Search.__table__.constraints
+        if isinstance(constraint, CheckConstraint)
+    }
+
+    assert "ck_searches_modality" in check_names
+    assert "ck_searches_seniority" in check_names
+
+
 def test_search_run_check_constraints_exist():
     check_names = {
         constraint.name
@@ -32,8 +43,10 @@ def test_search_run_check_constraints_exist():
         if isinstance(constraint, CheckConstraint)
     }
 
+    assert "ck_search_runs_status" in check_names
     assert "ck_search_runs_progress_range" in check_names
     assert "ck_search_runs_total_found_nonnegative" in check_names
+
 
 
 def test_enum_values():

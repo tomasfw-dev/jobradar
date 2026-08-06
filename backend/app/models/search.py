@@ -3,7 +3,7 @@ from __future__ import annotations
 from datetime import datetime
 from typing import TYPE_CHECKING
 
-from sqlalchemy import DateTime, Enum, String, func
+from sqlalchemy import CheckConstraint, DateTime, Enum, String, func
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.db.base import Base
@@ -15,6 +15,16 @@ if TYPE_CHECKING:
 
 class Search(Base):
     __tablename__ = "searches"
+    __table_args__ = (
+        CheckConstraint(
+            "modality IN ('all', 'remote', 'hybrid', 'onsite')",
+            name="ck_searches_modality",
+        ),
+        CheckConstraint(
+            "seniority IN ('all', 'trainee', 'junior', 'semi-senior', 'senior')",
+            name="ck_searches_seniority",
+        ),
+    )
 
     id: Mapped[int] = mapped_column(primary_key=True)
     query: Mapped[str] = mapped_column(String(200), nullable=False)
@@ -24,7 +34,7 @@ class Search(Base):
             SearchModality,
             name="ck_searches_modality",
             native_enum=False,
-            create_constraint=True,
+            create_constraint=False,
             values_callable=lambda enum: [member.value for member in enum],
         ),
         nullable=False,
@@ -36,7 +46,7 @@ class Search(Base):
             SearchSeniority,
             name="ck_searches_seniority",
             native_enum=False,
-            create_constraint=True,
+            create_constraint=False,
             values_callable=lambda enum: [member.value for member in enum],
         ),
         nullable=False,

@@ -26,6 +26,10 @@ class SearchRun(Base):
     __tablename__ = "search_runs"
     __table_args__ = (
         CheckConstraint(
+            "status IN ('pending', 'running', 'completed', 'failed')",
+            name="ck_search_runs_status",
+        ),
+        CheckConstraint(
             "progress >= 0 AND progress <= 100",
             name="ck_search_runs_progress_range",
         ),
@@ -46,7 +50,7 @@ class SearchRun(Base):
             SearchRunStatus,
             name="ck_search_runs_status",
             native_enum=False,
-            create_constraint=True,
+            create_constraint=False,
             values_callable=lambda enum: [member.value for member in enum],
         ),
         nullable=False,
